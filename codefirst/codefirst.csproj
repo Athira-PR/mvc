@@ -280,6 +280,7 @@
     <Content Include="Views\Student\delete.cshtml" />
     <Content Include="Views\Student\details.cshtml" />
     <Content Include="Views\Student\edit.cshtml" />
+    <Content Include="Views\Student\Details_PV.cshtml" />
     <Content Include="Views\Student\search.cshtml" />
   </ItemGroup>
   <ItemGroup>

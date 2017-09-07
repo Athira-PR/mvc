@@ -84,10 +84,21 @@ namespace codefirst.Controllers
 
             return View(student);
         }
-
         public ActionResult search()
         {
             return View();
         }
+
+        public ActionResult Details_PV()
+
+        {
+            
+            StudentContext db = new StudentContext();
+            List<Student> li = db.Students.ToList();
+
+            return PartialView(li);
+        }
+
+        
     }
 }

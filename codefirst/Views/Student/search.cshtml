@@ -1,26 +1,31 @@
-﻿<div id="btndiv">
-    <input type="button" id="searchbtn" />
-    <input type="button" id="dispbtn"/>
+﻿@*@model IEnumerable<codefirst.Models.Student>*@
+@{
+    ViewBag.Title = "search";
+}
+
+<h2>search</h2>
+
+<div>
+    <input type="button" value="Search" id="btnSearch" />
 </div>
-<div id="pv">
-    @section scripts{
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#searchbtn').click(function () {
-                    $.ajax({
-                        url: '@Url.Action("search","StudentController")',
-                        type: "get",
-                        sucess: function (data) {$('#container').html(data)
 
-                        }
-                    })
+<div id="divResult"></div>
+@section scripts{
 
-                })
-                
-            })
-        </script>
-        
-        }
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnSearch').click(function(){
+            $.ajax({
+                url: "/Student/Details_PV",
 
-</div>
-<div id="container"></div>
+                success:function(result)
+                {
+                   // $('#divResult').html($(this).val());
+
+                    $('#divResult').html(result);
+                }
+            });
+        });
+    });
+    </script>
+}
